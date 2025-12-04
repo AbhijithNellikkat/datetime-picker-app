@@ -91,7 +91,7 @@ class DateTimePickerBottomSheet extends StatelessWidget {
           const SizedBox(height: 15),
 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 1.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -116,71 +116,65 @@ class DateTimePickerBottomSheet extends StatelessWidget {
             height: 150,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Expanded(
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Obx(
-                            () => ScrollPicker(
-                              items: controller.months,
-                              selectedValue: controller.selectedMonth.value,
-                              onValueChanged: controller.updateMonth,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Obx(
-                            () => ScrollPicker(
-                              items: controller.days,
-                              selectedValue: controller.selectedDay.value,
-                              onValueChanged: controller.updateDay,
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 28),
-                        Expanded(
-                          child: Obx(
-                            () => ScrollPicker(
-                              items: controller.hours,
-                              selectedValue: controller.selectedHour.value,
-                              onValueChanged: controller.updateHour,
-                            ),
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Text(
-                            ':',
-                            style: TextStyle(
-                              fontSize: 32,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Obx(
-                            () => ScrollPicker(
-                              items: controller.minutes,
-                              selectedValue: controller.selectedMinute.value,
-                              onValueChanged: controller.updateMinute,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Obx(
-                            () => ScrollPicker(
-                              items: controller.periods,
-                              selectedValue: controller.selectedPeriod.value,
-                              onValueChanged: controller.updatePeriod,
-                            ),
-                          ),
-                        ),
-                      ],
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Obx(
+                      () => ScrollPicker(
+                        items: controller.months,
+                        selectedValue: controller.selectedMonth.value,
+                        onValueChanged: controller.updateMonth,
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    child: Obx(
+                      () => ScrollPicker(
+                        items: controller.days,
+                        selectedValue: controller.selectedDay.value,
+                        onValueChanged: controller.updateDay,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 28),
+                  Expanded(
+                    child: Obx(
+                      () => ScrollPicker(
+                        items: controller.hours,
+                        selectedValue: controller.selectedHour.value,
+                        onValueChanged: controller.updateHour,
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      ':',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Obx(
+                      () => ScrollPicker(
+                        items: controller.minutes,
+                        selectedValue: controller.selectedMinute.value,
+                        onValueChanged: controller.updateMinute,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Obx(
+                      () => ScrollPicker(
+                        items: controller.periods,
+                        selectedValue: controller.selectedPeriod.value,
+                        onValueChanged: controller.updatePeriod,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -203,7 +197,7 @@ class DateTimePickerBottomSheet extends StatelessWidget {
                 child: const Text(
                   'confirm date & time',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w400,
                     color: AppColors.background,
                   ),
